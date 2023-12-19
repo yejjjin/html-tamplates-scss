@@ -1,0 +1,22 @@
+@import "variables", "mixins", "fonts", "reset";
+
+.card {
+  position: relative;
+  @include card($primary, $white);
+  span {
+    @include posXY;
+  }
+}
+
+.slide {
+  li {
+    height: 300px;
+    a {
+      display: block;
+      height: 100%;
+      color: $primary;
+    }
+  }
+}
+
+@import "main", "sub1";
