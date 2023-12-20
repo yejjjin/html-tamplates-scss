@@ -1,22 +1,82 @@
 @import "variables", "mixins", "fonts", "reset";
 
-.card {
-  position: relative;
-  @include card($primary, $white);
-  span {
-    @include posXY;
-  }
+// btn style
+
+// card style
+
+// list style
+
+// layout
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.slide {
-  li {
-    height: 300px;
-    a {
-      display: block;
-      height: 100%;
-      color: $primary;
+#header {
+  height: $hdH;
+  background-color: $gray-600;
+}
+
+#main {
+  // main짧아도 footer 바닥
+  // 반복이 많은 요소는 variables 변수로 설정
+  // min-height: calc(100vh - $hdH - $ftH);
+  flex-grow: 1;
+}
+
+#footer {
+  height: $ftH;
+}
+
+// header
+#header {
+  .inner {
+    // @include flexSpaceBetween;
+    // mixin 에서 가져 올 때 변경사항은 ()
+    @include flex($justify: space-between);
+  }
+  .col-right {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .util {
+    ul {
+      display: flex;
+    }
+
+    .link-g {
+      display: flex;
+      align-items: center;
+      height: $hdH;
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+      }
+    }
+
+    .link-lang {
+      &::before {
+        content: "\f0ac";
+      }
+    }
+
+    .link-search {
+      &::before {
+        content: "\f002";
+      }
+    }
+
+    .link-my {
+      &::before {
+        content: "\f007";
+      }
     }
   }
 }
 
+// footer
+
+// 우선순위
 @import "main", "sub1";

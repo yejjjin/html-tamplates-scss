@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- cdn 주소를 복붙하고 사이트에서 아이콘 등 가져오기 -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sub title website title</title>
@@ -46,6 +47,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@NaN,0,0,0"
     />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <!-- swiper -->
     <link
       rel="stylesheet"
@@ -57,17 +63,120 @@
     <!-- defer 붙여주기 -->
   </head>
   <body>
-    <div class="card">
-      <span>card</span>
+    <!-- u-skip -->
+    <div id="u-skip">
+      <a href="#gnb">주메뉴 바로가기</a>
+      <a href="#main">본문 바로가기</a>
     </div>
+    <div class="wrap">
+      <header id="header">
+        <div class="inner">
+          <h1 id="logo" class="logo">
+            <a href="#">logo</a>
+          </h1>
+          <div class="col-right">
+            <!-- gnb -->
+            <div class="gnb-wrap">
+              <input
+                type="checkbox"
+                name="gnbNav"
+                id="gnbNav"
+                class="inp-burger"
+              />
+              <!-- id값 = for값 / input: 자동완성 + class -->
+              <label for="gnbNav">
+                <div class="blind">전체 메뉴 보기</div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </label>
+              <nav id="gnb">전체 메뉴</nav>
+            </div>
+            <!-- util -->
+            <div class="util">
+              <ul>
+                <li>
+                  <a href="#" class="link-g link-lang">
+                    <span class="blind">language</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="link-g link-search">
+                    <span class="blind">search</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="link-g link-my">
+                    <span class="blind">mypage</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <!-- swiper 사이트에서 소스 긁어오기 -->
+        <!-- class명 임의변경 -->
+        <swiper-container
+          class="slide-intro"
+          pagination="true"
+          pagination-clickable="true"
+          navigation="true"
+          space-between="30"
+          loop="true"
+        >
+          <swiper-slide>Slide 1</swiper-slide>
+          <swiper-slide>Slide 2</swiper-slide>
+          <swiper-slide>Slide 3</swiper-slide>
+          <swiper-slide>Slide 4</swiper-slide>
+          <swiper-slide>Slide 5</swiper-slide>
+          <swiper-slide>Slide 6</swiper-slide>
+          <swiper-slide>Slide 7</swiper-slide>
+          <swiper-slide>Slide 8</swiper-slide>
+          <swiper-slide>Slide 9</swiper-slide>
+        </swiper-container>
 
-    <div class="slide">
-      <ul>
-        <li>
-          <a href="#">안녕하세요.</a>
-        </li>
-      </ul>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+        <section class="sec-g sec-best">
+          <div class="inner">
+            <h2 class="sec-tit">best item</h2>
+            <div class="sec-cont">
+              <swiper-container
+                class="slide-best"
+                pagination="true"
+                pagination-clickable="true"
+                navigation="true"
+                space-between="30"
+                loop="true"
+              >
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide>
+                <swiper-slide>Slide 5</swiper-slide>
+                <swiper-slide>Slide 6</swiper-slide>
+                <swiper-slide>Slide 7</swiper-slide>
+                <swiper-slide>Slide 8</swiper-slide>
+                <swiper-slide>Slide 9</swiper-slide>
+              </swiper-container>
+
+              <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer id="footer">
+        <h1 class="logo">
+          <a href="#">logo</a>
+        </h1>
+        <div class="sns">
+          <a href="#">instagram</a>
+          <a href="#">youtube</a>
+          <a href="#">blog</a>
+        </div>
+      </footer>
     </div>
-    <a href="#">가나다</a>
   </body>
 </html>

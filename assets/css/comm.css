@@ -76,14 +76,12 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after {
+blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-q:before,
-q:after {
+q:before, q:after {
   content: "";
   content: none;
 }
@@ -113,14 +111,11 @@ body {
 }
 
 /* 뷰표트 변환시 폰트크기 자동확대 방지 */
-input[type="text"],
-input[type="password"],
-input[type="submit"],
-input[type="search"] {
+input[type=text], input[type=password], input[type=submit], input[type=search] {
   -webkit-appearance: none;
   border-radius: 0;
 }
-input:checked[type="checkbox"] {
+input:checked[type=checkbox] {
   background-color: #666;
   -webkit-appearance: checkbox;
 }
@@ -130,14 +125,11 @@ button {
   border-radius: 0;
 }
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"] {
+input[type=button], input[type=submit], input[type=reset], input[type=file] {
   -webkit-appearance: button;
   border-radius: 0;
 }
-input[type="search"]::-webkit-search-cancel-button {
+input[type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
@@ -147,8 +139,7 @@ body {
   background: #fff;
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Noto Sans KR", sans-serif, "Malgun Gothic", "맑은 고딕",
-    sans-serif;
+  font-family: "Noto Sans KR", sans-serif, "Malgun Gothic", "맑은 고딕", sans-serif;
   color: #202020;
 }
 
@@ -163,8 +154,7 @@ a {
   color: #333;
   text-decoration: none;
 }
-a:active,
-a:hover {
+a:active, a:hover {
   text-decoration: none;
 }
 
@@ -183,7 +173,7 @@ hr {
   display: none;
 }
 
-input[type="password"] {
+input[type=password] {
   font-family: "Malgun Gothic";
 }
 
@@ -291,24 +281,58 @@ legend {
   content: "";
 }
 
-.card {
-  position: relative;
-  height: 300px;
-  border: 1px solid #fff;
-  background-color: #f44336;
-}
-.card span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.slide li {
-  height: 300px;
+#header {
+  height: 70px;
+  background-color: #757575;
 }
-.slide li a {
-  display: block;
-  height: 100%;
-  color: #f44336;
-} /*# sourceMappingURL=comm.css.map */
+
+#main {
+  flex-grow: 1;
+}
+
+#footer {
+  height: 70px;
+}
+
+#header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#header .col-right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#header .util ul {
+  display: flex;
+}
+#header .util .link-g {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+#header .util .link-g::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+#header .util .link-lang::before {
+  content: "\f0ac";
+}
+#header .util .link-search::before {
+  content: "\f002";
+}
+#header .util .link-my::before {
+  content: "\f007";
+}
+
+.slide-intro swiper-slide {
+  height: 300px;
+  background-color: #ff5722;
+}/*# sourceMappingURL=comm.css.map */
