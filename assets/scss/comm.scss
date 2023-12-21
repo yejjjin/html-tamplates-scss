@@ -147,6 +147,11 @@
     flex-direction: column;
     z-index: 1100;
     position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
 
     .bar {
       background-color: $black;
