@@ -29,7 +29,26 @@
   height: $ftH;
 }
 
+.inner {
+  min-width: 1280px;
+  // 가운데 정렬
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .inner {
+    // pc .ver padding 0
+    padding: 0;
+  }
+}
+
 // header
+#logo {
+  position: relative;
+  z-index: 1100;
+}
+
 #header {
   .inner {
     // @include flexSpaceBetween;
@@ -44,6 +63,11 @@
   .util {
     ul {
       display: flex;
+    }
+    ul {
+      a {
+        padding: 20px;
+      }
     }
 
     .link-g {
@@ -74,6 +98,80 @@
       }
     }
   }
+}
+
+.gnb-wrap {
+  display: flex;
+  align-items: center;
+  .inp-burger {
+    // 체크박스 날리기
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+
+    // &:checked = input 체크시 디자인
+    &:checked {
+      // 형제 선택시 & + : 선택자
+      & + .label-burger {
+        display: flex;
+        .bar {
+          &:nth-child(1) {
+            transform: translateY(3px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:nth-child(3) {
+            transform: translateY(-3px) rotate(-45deg);
+          }
+        }
+      }
+
+      // gnb가 보이게
+      & ~ #gnb {
+        display: flex;
+        left: 0;
+      }
+    }
+  }
+
+  // input 체크되지 않았을 때 디자인
+  .label-burger {
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+    z-index: 1100;
+    position: relative;
+
+    .bar {
+      background-color: $black;
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+  }
+}
+
+#gnb {
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  background-color: $white;
+  width: 100%;
+  transition: all 0.3s;
 }
 
 // footer
